@@ -1,0 +1,37 @@
+balance = 10000
+
+print("===== ATM SYSTEM =====")
+print("Current Account Balance =", balance)
+
+print("\n1. Credit")
+print("2. Withdraw")
+print("3. Balance Check")
+print("4. Exit")
+
+choice = int(input("Enter your choice: "))
+
+if choice == 1:
+    amount = float(input("Enter amount to credit: "))
+    balance = balance + amount
+    print("Amount Credited Successfully")
+    print("Current Account Balance =", balance)
+
+elif choice == 2:
+    amount = float(input("Enter amount to withdraw: "))
+
+    if amount <= balance:      # Nested if
+        balance = balance - amount
+        print("Withdrawal Successful")
+        print("Current Account Balance =", balance)
+    else:
+        print("Insufficient Balance")
+        print("Current Account Balance =", balance)
+
+elif choice == 3:
+    print("Current Account Balance =", balance)
+
+elif choice == 4:
+    print("Thank You for Using ATM")
+
+else:
+    print("Invalid Choice")
